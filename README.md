@@ -5,7 +5,8 @@ Desarrollo de aplicación web. En esta aplicación se trabaja exclusivamente fro
 
 # Paquetes utilizados para compilar en local este proyecto:
 
-      React 18.2.1
+      Next: 13.4.19
+      React: 18.2.1
       Node: 20.6.0
       Package Manager: npm 9.8.1
 

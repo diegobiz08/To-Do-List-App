@@ -1,6 +1,6 @@
 import {TaskModel} from "@/app/models/TaskModel";
 
-const baseUrl = 'http://localhost:8080';
+const baseUrl = 'http://localhost:8080/ToDoListWS/api';
 
 export const getAllTasks = async (): Promise<TaskModel[]> => {
 
