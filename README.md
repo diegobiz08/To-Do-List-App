@@ -3,7 +3,7 @@
 Desarrollo de aplicación web. En esta aplicación se trabaja exclusivamente front-end
 
 
-# Paquetes requeridos para proyecto:
+# Paquetes utilizados para compilar en local este proyecto:
 
       React 18.2.1
       Node: 20.6.0
