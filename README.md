@@ -1,6 +1,7 @@
 # Lista de actividades (To-do-list) App Web
+Applicación web para administración de tareas/actividades por realizar.
 
-Desarrollo de aplicación web. En esta aplicación se trabaja exclusivamente front-end
+En esta aplicación se trabaja exclusivamente front-end
 
 
 # Paquetes utilizados para compilar en local este proyecto:
@@ -14,6 +15,9 @@ Desarrollo de aplicación web. En esta aplicación se trabaja exclusivamente fro
 
     npm run dev
 
+
+    *En caso de error, proceso de compilación forzosa en manual técnico
+
 # Paquetes instalados para desarrollar prueba
 
     React (Framework)
@@ -22,5 +26,5 @@ Desarrollo de aplicación web. En esta aplicación se trabaja exclusivamente fro
     Zustand (Estados globales)
 
 
-# Created By
-      Diego Biz
+# 
+     Desarrollado por Diego Biz

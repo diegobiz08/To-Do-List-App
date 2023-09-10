@@ -8,13 +8,24 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isSigningUp, setIsSigningUp] = useState(false);
+    const [emailError, setEmailError] = useState('');
 
     useEffect(() => {
         const initialLoggedIn = !!localStorage.getItem('token');
         setIsLoggedIn(initialLoggedIn);
     }, []);
 
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
     const handleSignup = async () => {
+        if (!validateEmail(email)) {
+            setEmailError('Correo electrónico no válido');
+            return;
+        }
+
         try {
             const userData = { email, password };
 
@@ -44,6 +55,11 @@ export default function Login() {
     };
 
     const handleLogin = async () => {
+        if (!validateEmail(email)) {
+            setEmailError('Correo electrónico no válido');
+            return;
+        }
+
         try {
             const response = await fetch('http://localhost:8080/tasks/signin', {
                 method: 'POST',
@@ -115,9 +131,15 @@ export default function Login() {
                                     id="email"
                                     placeholder="Correo electrónico"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => {
+                                        setEmail(e.target.value);
+                                        setEmailError('');
+                                    }}
                                     className="w-full border border-gray-300 rounded py-2 px-3 focus:outline-none focus:border-blue-500"
                                 />
+                                {emailError && (
+                                    <p className="text-red-500 text-sm mt-2">{emailError}</p>
+                                )}
                             </td>
                         </tr>
                         <tr>
@@ -155,7 +177,7 @@ export default function Login() {
                                             Iniciar sesión
                                         </button>
                                         <div className="mt-2 text-gray-600 text-center">
-                                            No estás registrado?
+                                            ¿No estás registrado?
                                             <button
                                                 onClick={() => setIsSigningUp(true)}
                                                 className="text-blue-500 hover:text-blue-600 focus:outline-none ml-2"
@@ -171,7 +193,7 @@ export default function Login() {
                             <tr>
                                 <td colSpan="2" className="py-3 px-6 text-center">
                                     <div className="text-gray-600">
-                                        Ya estás registrado?
+                                        ¿Ya estás registrado?
                                         <button
                                             onClick={() => setIsSigningUp(false)}
                                             className="text-green-500 hover:text-green-600 focus:outline-none ml-2"
