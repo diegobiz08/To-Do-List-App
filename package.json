@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "node_modules/.bin/next dev",
+    "force": "next dev",
     "build": "node_modules/.bin/next build",
     "start": "node_modules/.bin/next start",
-    "lint": "node_modules/.bin/next lint",
+    "lint": "node_modules/.bin/next lint"
   },
   "dependencies": {
     "@types/node": "20.5.9",
